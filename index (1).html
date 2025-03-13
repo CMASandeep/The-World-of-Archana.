@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The World of Archana</title>
+    <style>
+        body {
+            font-family: "Georgia", serif;
+            background-color: #f5f1e6;
+            color: #4a5634;
+            text-align: center;
+            margin: 0;
+            padding: 0;
+        }
+        header {
+            background: #9abf96;
+            padding: 20px;
+            font-size: 24px;
+            color: white;
+            box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
+        }
+        section {
+            margin: 30px auto;
+            padding: 20px;
+            max-width: 700px;
+            background: white;
+            border-radius: 10px;
+            box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
+        }
+        button {
+            background: #d4a373;
+            border: none;
+            padding: 12px 20px;
+            font-size: 18px;
+            cursor: pointer;
+            border-radius: 5px;
+            transition: all 0.3s ease;
+        }
+        button:hover {
+            background: #8c5e38;
+            color: white;
+        }
+        .event, .date {
+            background: #9abf96;
+            color: white;
+            padding: 10px;
+            margin: 10px;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+        .date:hover, .event:hover {
+            background: #4a5634;
+        }
+        .birthday {
+            background: #ffcc80;
+            padding: 15px;
+            border-radius: 10px;
+            font-size: 20px;
+            font-weight: bold;
+            color: #4a5634;
+        }
+        .birthday-icon {
+            font-size: 30px;
+            margin-right: 10px;
+        }
+        footer {
+            background: #4a5634;
+            padding: 10px;
+            color: white;
+            font-size: 14px;
+            margin-top: 20px;
+        }
+        audio {
+            width: 100%;
+            margin-top: 10px;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Welcome to The World of Archana</h1>
+        <p>A place filled with love, happiness, and cherished memories.</p>
+    </header>
+
+    <section id="timeline">
+        <h2>Our Love Story</h2>
+        <div class="event" onclick="showMessage('We met for the first time at Nimapara College. That day changed my life forever!')">
+            <span>26 May 2022</span> – The Day We First Met
+        </div>
+        <div class="event" onclick="showMessage('Our first date was on 9th March 2023. I was so happy to be with you!')">
+            <span>9 March 2023</span> – Our First Date
+        </div>
+        <div class="event" onclick="showMessage('On 22nd December 2023, I asked you to be mine forever.')">
+            <span>22 Dec 2023</span> – Engagement
+        </div>
+        <div class="event" onclick="showMessage('On 12th July 2024, we became one. The best day of my life!')">
+            <span>12 July 2024</span> – Marriage
+        </div>
+    </section>
+
+    <section id="birthday">
+        <h2>🎂 Special Birthday Celebration 🎂</h2>
+        <div class="birthday">
+            <span class="birthday-icon">🎁</span> 
+            6th October – The Day an Angel was Born!
+        </div>
+    </section>
+
+    <section id="love-notes">
+        <h2>Little Things I Love About You</h2>
+        <p id="randomNote">Click below to see a surprise love note!</p>
+        <button onclick="showRandomNote()">Show Note</button>
+    </section>
+
+    <section id="happiness-box">
+        <h2>Archana’s Happiness Box</h2>
+        <button onclick="openHappinessBox()">🎁 Click to Open</button>
+        <p id="happiness-message"></p>
+    </section>
+
+    <section id="music">
+        <h2>Our Song</h2>
+        <audio id="loveSong" controls>
+            <source src="your-song.mp3" type="audio/mp3">
+            Your browser does not support the audio element.
+        </audio>
+        <button onclick="playSong()">▶ Play Song</button>
+        <p>Every time this song plays, I think of you.</p>
+    </section>
+
+    <footer>
+        <p>Made with ❤️ by Sandeep for Archana</p>
+    </footer>
+
+    <script>
+        function showMessage(message) {
+            alert(message);
+        }
+
+        const loveNotes = [
+            "I love the way you laugh—it’s my favorite sound.",
+            "Every moment with you feels like a dream.",
+            "You make my life more beautiful every single day.",
+            "I admire your kindness and strength.",
+            "Being with you is the best part of my life."
+        ];
+
+        function showRandomNote() {
+            let randomIndex = Math.floor(Math.random() * loveNotes.length);
+            document.getElementById("randomNote").textContent = loveNotes[randomIndex];
+        }
+
+        const happinessMessages = [
+            "You are my sunshine on a cloudy day!",
+            "Every moment with you is a blessing.",
+            "I’m so lucky to have you in my life!",
+            "You make everything feel magical.",
+            "Thank you for being you. You are perfect."
+        ];
+
+        function openHappinessBox() {
+            let randomIndex = Math.floor(Math.random() * happinessMessages.length);
+            document.getElementById("happiness-message").textContent = happinessMessages[randomIndex];
+        }
+
+        function playSong() {
+            document.getElementById("loveSong").play();
+        }
+    </script>
+</body>
+</html>
